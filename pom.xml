@@ -13,9 +13,9 @@
     <modules>
         <module>web-app</module>
         <module>jpa-entities</module>
-        <module>from-intellij</module>
         <module>web-api</module>
         <module>converters</module>
+        <module>from-intellij</module>
     </modules>
 
     <properties>
@@ -29,9 +29,11 @@
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.2.4</version>
                 <configuration>
                     <flattenMode>bom</flattenMode>
                 </configuration>
@@ -54,8 +56,11 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0</version>
                 <executions>
                     <execution>
                         <id>enforce-env-requirements</id>
@@ -75,6 +80,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
